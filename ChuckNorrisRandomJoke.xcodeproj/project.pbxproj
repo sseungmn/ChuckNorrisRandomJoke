@@ -17,6 +17,7 @@
 		5CA42FB32809868D00B091C4 /* ChuckNorrisRandomJokeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA42FB22809868D00B091C4 /* ChuckNorrisRandomJokeUITestsLaunchTests.swift */; };
 		5CA42FC028098B1A00B091C4 /* JokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA42FBF28098B1A00B091C4 /* JokeModel.swift */; };
 		5CA42FC228098B7900B091C4 /* JokeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA42FC128098B7900B091C4 /* JokeAPI.swift */; };
+		5CA42FC4280993ED00B091C4 /* MockJokeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA42FC3280993ED00B091C4 /* MockJokeAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		5CA42FB22809868D00B091C4 /* ChuckNorrisRandomJokeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisRandomJokeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5CA42FBF28098B1A00B091C4 /* JokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModel.swift; sourceTree = "<group>"; };
 		5CA42FC128098B7900B091C4 /* JokeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeAPI.swift; sourceTree = "<group>"; };
+		5CA42FC3280993ED00B091C4 /* MockJokeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJokeAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				5CA42F932809868C00B091C4 /* ViewController.swift */,
 				5CA42FBF28098B1A00B091C4 /* JokeModel.swift */,
 				5CA42FC128098B7900B091C4 /* JokeAPI.swift */,
+				5CA42FC3280993ED00B091C4 /* MockJokeAPI.swift */,
 				5CA42F982809868D00B091C4 /* Assets.xcassets */,
 				5CA42F9A2809868D00B091C4 /* LaunchScreen.storyboard */,
 				5CA42F9D2809868D00B091C4 /* Info.plist */,
@@ -263,6 +266,7 @@
 				5CA42FC028098B1A00B091C4 /* JokeModel.swift in Sources */,
 				5CA42F942809868C00B091C4 /* ViewController.swift in Sources */,
 				5CA42FC228098B7900B091C4 /* JokeAPI.swift in Sources */,
+				5CA42FC4280993ED00B091C4 /* MockJokeAPI.swift in Sources */,
 				5CA42F902809868C00B091C4 /* AppDelegate.swift in Sources */,
 				5CA42F922809868C00B091C4 /* SceneDelegate.swift in Sources */,
 			);
