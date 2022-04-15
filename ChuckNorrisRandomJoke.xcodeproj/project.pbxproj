@@ -12,9 +12,6 @@
 		5CA42F942809868C00B091C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA42F932809868C00B091C4 /* ViewController.swift */; };
 		5CA42F992809868D00B091C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CA42F982809868D00B091C4 /* Assets.xcassets */; };
 		5CA42F9C2809868D00B091C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CA42F9A2809868D00B091C4 /* LaunchScreen.storyboard */; };
-		5CA42FA72809868D00B091C4 /* ChuckNorrisRandomJokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA42FA62809868D00B091C4 /* ChuckNorrisRandomJokeTests.swift */; };
-		5CA42FB12809868D00B091C4 /* ChuckNorrisRandomJokeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA42FB02809868D00B091C4 /* ChuckNorrisRandomJokeUITests.swift */; };
-		5CA42FB32809868D00B091C4 /* ChuckNorrisRandomJokeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA42FB22809868D00B091C4 /* ChuckNorrisRandomJokeUITestsLaunchTests.swift */; };
 		5CA42FC028098B1A00B091C4 /* JokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA42FBF28098B1A00B091C4 /* JokeModel.swift */; };
 		5CA42FC228098B7900B091C4 /* JokeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA42FC128098B7900B091C4 /* JokeAPI.swift */; };
 		5CA42FC4280993ED00B091C4 /* MockJokeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA42FC3280993ED00B091C4 /* MockJokeAPI.swift */; };
@@ -22,13 +19,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		5CA42FA32809868D00B091C4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CA42F842809868C00B091C4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5CA42F8B2809868C00B091C4;
-			remoteInfo = ChuckNorrisRandomJoke;
-		};
-		5CA42FAD2809868D00B091C4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5CA42F842809868C00B091C4 /* Project object */;
 			proxyType = 1;
@@ -46,10 +36,6 @@
 		5CA42F9B2809868D00B091C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CA42F9D2809868D00B091C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CA42FA22809868D00B091C4 /* ChuckNorrisRandomJokeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChuckNorrisRandomJokeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CA42FA62809868D00B091C4 /* ChuckNorrisRandomJokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisRandomJokeTests.swift; sourceTree = "<group>"; };
-		5CA42FAC2809868D00B091C4 /* ChuckNorrisRandomJokeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChuckNorrisRandomJokeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CA42FB02809868D00B091C4 /* ChuckNorrisRandomJokeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisRandomJokeUITests.swift; sourceTree = "<group>"; };
-		5CA42FB22809868D00B091C4 /* ChuckNorrisRandomJokeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisRandomJokeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5CA42FBF28098B1A00B091C4 /* JokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModel.swift; sourceTree = "<group>"; };
 		5CA42FC128098B7900B091C4 /* JokeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeAPI.swift; sourceTree = "<group>"; };
 		5CA42FC3280993ED00B091C4 /* MockJokeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJokeAPI.swift; sourceTree = "<group>"; };
@@ -70,13 +56,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5CA42FA92809868D00B091C4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,7 +64,6 @@
 			children = (
 				5CA42F8E2809868C00B091C4 /* ChuckNorrisRandomJoke */,
 				5CA42FA52809868D00B091C4 /* ChuckNorrisRandomJokeTests */,
-				5CA42FAF2809868D00B091C4 /* ChuckNorrisRandomJokeUITests */,
 				5CA42F8D2809868C00B091C4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,7 +73,6 @@
 			children = (
 				5CA42F8C2809868C00B091C4 /* ChuckNorrisRandomJoke.app */,
 				5CA42FA22809868D00B091C4 /* ChuckNorrisRandomJokeTests.xctest */,
-				5CA42FAC2809868D00B091C4 /* ChuckNorrisRandomJokeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,18 +96,8 @@
 		5CA42FA52809868D00B091C4 /* ChuckNorrisRandomJokeTests */ = {
 			isa = PBXGroup;
 			children = (
-				5CA42FA62809868D00B091C4 /* ChuckNorrisRandomJokeTests.swift */,
 			);
 			path = ChuckNorrisRandomJokeTests;
-			sourceTree = "<group>";
-		};
-		5CA42FAF2809868D00B091C4 /* ChuckNorrisRandomJokeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5CA42FB02809868D00B091C4 /* ChuckNorrisRandomJokeUITests.swift */,
-				5CA42FB22809868D00B091C4 /* ChuckNorrisRandomJokeUITestsLaunchTests.swift */,
-			);
-			path = ChuckNorrisRandomJokeUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,24 +138,6 @@
 			productReference = 5CA42FA22809868D00B091C4 /* ChuckNorrisRandomJokeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5CA42FAB2809868D00B091C4 /* ChuckNorrisRandomJokeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5CA42FBC2809868D00B091C4 /* Build configuration list for PBXNativeTarget "ChuckNorrisRandomJokeUITests" */;
-			buildPhases = (
-				5CA42FA82809868D00B091C4 /* Sources */,
-				5CA42FA92809868D00B091C4 /* Frameworks */,
-				5CA42FAA2809868D00B091C4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5CA42FAE2809868D00B091C4 /* PBXTargetDependency */,
-			);
-			name = ChuckNorrisRandomJokeUITests;
-			productName = ChuckNorrisRandomJokeUITests;
-			productReference = 5CA42FAC2809868D00B091C4 /* ChuckNorrisRandomJokeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -203,10 +152,6 @@
 						CreatedOnToolsVersion = 13.3;
 					};
 					5CA42FA12809868D00B091C4 = {
-						CreatedOnToolsVersion = 13.3;
-						TestTargetID = 5CA42F8B2809868C00B091C4;
-					};
-					5CA42FAB2809868D00B091C4 = {
 						CreatedOnToolsVersion = 13.3;
 						TestTargetID = 5CA42F8B2809868C00B091C4;
 					};
@@ -227,7 +172,6 @@
 			targets = (
 				5CA42F8B2809868C00B091C4 /* ChuckNorrisRandomJoke */,
 				5CA42FA12809868D00B091C4 /* ChuckNorrisRandomJokeTests */,
-				5CA42FAB2809868D00B091C4 /* ChuckNorrisRandomJokeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,13 +187,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5CA42FA02809868D00B091C4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5CA42FAA2809868D00B091C4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -276,16 +213,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CA42FA72809868D00B091C4 /* ChuckNorrisRandomJokeTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5CA42FA82809868D00B091C4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5CA42FB32809868D00B091C4 /* ChuckNorrisRandomJokeUITestsLaunchTests.swift in Sources */,
-				5CA42FB12809868D00B091C4 /* ChuckNorrisRandomJokeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,11 +223,6 @@
 			isa = PBXTargetDependency;
 			target = 5CA42F8B2809868C00B091C4 /* ChuckNorrisRandomJoke */;
 			targetProxy = 5CA42FA32809868D00B091C4 /* PBXContainerItemProxy */;
-		};
-		5CA42FAE2809868D00B091C4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5CA42F8B2809868C00B091C4 /* ChuckNorrisRandomJoke */;
-			targetProxy = 5CA42FAD2809868D00B091C4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -524,40 +446,6 @@
 			};
 			name = Release;
 		};
-		5CA42FBD2809868D00B091C4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.miniOS.ChuckNorrisRandomJokeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ChuckNorrisRandomJoke;
-			};
-			name = Debug;
-		};
-		5CA42FBE2809868D00B091C4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.miniOS.ChuckNorrisRandomJokeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ChuckNorrisRandomJoke;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -584,15 +472,6 @@
 			buildConfigurations = (
 				5CA42FBA2809868D00B091C4 /* Debug */,
 				5CA42FBB2809868D00B091C4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5CA42FBC2809868D00B091C4 /* Build configuration list for PBXNativeTarget "ChuckNorrisRandomJokeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5CA42FBD2809868D00B091C4 /* Debug */,
-				5CA42FBE2809868D00B091C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
