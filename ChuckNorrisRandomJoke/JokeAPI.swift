@@ -34,9 +34,18 @@ enum APIError: LocalizedError {
     }
 }
 
+protocol URLSessionProtocol {
+    func dataTask(
+        with request: URLRequest,
+        completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
+    ) -> URLSessionDataTask
+}
+
+extension URLSession: URLSessionProtocol {}
+
 class JokeAPIProvider {
-    let session: URLSession
-    init(session: URLSession = .shared) {
+    let session: URLSessionProtocol
+    init(session: URLSessionProtocol = URLSession.shared) {
         self.session = session
     }
 
