@@ -11,36 +11,40 @@ import XCTest
 class JokeAPIProviderTests: XCTestCase {
     var sut: JokeAPIProvider!
 
-    override func setUpWithError() throws {
-        sut = .init(session: MockURLSession())
+    override func tearDownWithError() throws {
+        sut = nil
     }
 
     func test_fetchRandomJoke() {
-        let expectation = XCTestExpectation()
-        let response = try? JSONDecoder().decode(
-            JokeResponse.self,
-            from: JokeAPI.randomJoke.sampleData
-        )
+        sut = JokeAPIProvider(isStub: true)
 
-        sut.fetchRandomJoke { result in
+        let expectation = XCTestExpectation()
+
+        let expectedJoke = try? JSONDecoder().decode(
+            JokeResponse.self,
+            from: JokeAPI
+                .randomJoke("Oh", "Seungmin", ["nerdy"])
+                .sampleData
+        ).value
+
+        sut.fetchRandomJoke(firstName: "Oh", lastName: "Seungmin", categories: ["nerdy"]) { result in
             switch result {
             case .success(let joke):
-                XCTAssertEqual(joke.id, response?.value.id)
-                XCTAssertEqual(joke.joke, response?.value.joke)
-            case .failure:
-                XCTFail()
+                XCTAssertEqual(expectedJoke?.joke, joke.joke)
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
             }
             expectation.fulfill()
         }
-
         wait(for: [expectation], timeout: 2.0)
     }
 
     func test_fetchRandomJoke_failure() {
-        sut = .init(session: MockURLSession(makeRequestFail: true))
+        sut = JokeAPIProvider(isStub: true, sampleStatusCode: 401)
+
         let expectation = XCTestExpectation()
 
-        sut.fetchRandomJoke { result in
+        sut.fetchRandomJoke(firstName: "Oh", lastName: "Seungmin", categories: ["nerdy"]) { result in
             switch result {
             case .success:
                 XCTFail()

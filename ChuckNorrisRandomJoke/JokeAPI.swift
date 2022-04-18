@@ -6,11 +6,21 @@
 //
 
 import Foundation
+import Moya
 
 enum JokeAPI {
-    case randomJoke
+    case randomJoke(
+        _ firstName: String? = nil,
+        _ lastName: String? = nil,
+        _ categories: [String] = []
+    )
+}
 
-    static let baseURL = "https://api.icndb.com/"
+extension JokeAPI: TargetType {
+
+    var baseURL: URL {
+        return URL(string: "https://api.icndb.com/")!
+    }
 
     var path: String {
         switch self {
@@ -18,56 +28,95 @@ enum JokeAPI {
             return "jokes/random"
         }
     }
-    var url: URL {
-        return URL(string: JokeAPI.baseURL + path)!
+
+    var method: Moya.Method {
+        return .post
     }
-}
 
-enum APIError: LocalizedError {
-    case unknownError
-
-    var errorDescription: String? {
+    var task: Task {
         switch self {
-        case .unknownError:
-            return "UnknownError"
+        case .randomJoke(let firstName, let lastName, let categories):
+            var params: [String: Any?] = [
+                "firstName": firstName,
+                "lastName": lastName
+            ]
+
+            if categories.isEmpty == false {
+                params["limitTo"] = "(categories)"
+            }
+
+            return .requestParameters(
+                parameters: params,
+                encoding: URLEncoding.queryString
+            )
+        }
+    }
+
+    var headers: [String : String]? {
+        nil
+    }
+
+    var sampleData: Data {
+        switch self {
+        case .randomJoke(let firstName, let lastName, let categoris):
+            let firstName = firstName ?? "Chuck"
+            let lastName = lastName ?? "Norris"
+
+            return Data(
+                    """
+                    {
+                       "type": "success",
+                           "value": {
+                           "id": 107,
+                           "joke": "\(firstName) \(lastName) can retrieve anything from /dev/null.",
+                           "categories": \(categoris)
+                       }
+                    }
+                    """.utf8
+            )
         }
     }
 }
 
-protocol URLSessionProtocol {
-    func dataTask(
-        with request: URLRequest,
-        completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
-    ) -> URLSessionDataTask
-}
+class JokeAPIProvider: ProviderProtocol {
 
-extension URLSession: URLSessionProtocol {}
+    typealias T = JokeAPI
+    let provider: MoyaProvider<JokeAPI>
 
-class JokeAPIProvider {
-    let session: URLSessionProtocol
-    init(session: URLSessionProtocol = URLSession.shared) {
-        self.session = session
+    required init(
+        isStub: Bool = false,
+        sampleStatusCode: Int = 200,
+        customEndpointClosure: ((JokeAPI) -> Endpoint)? = nil
+    ) {
+        provider = Self.consProvider(isStub, sampleStatusCode, customEndpointClosure)
+    }
+    init(provider: MoyaProvider<JokeAPI> = .init()) {
+        self.provider = provider
     }
 
-    func fetchRandomJoke(completion: @escaping (Result<Joke, Error>) -> Void) {
-        let request = URLRequest(url: JokeAPI.randomJoke.url)
-
-        let task: URLSessionDataTask = session
-            .dataTask(with: request) { data, urlResponse, error in
-                guard let response = urlResponse as? HTTPURLResponse,
-                      (200...399).contains(response.statusCode) else {
-                    completion(.failure(error ?? APIError.unknownError))
+    func fetchRandomJoke(
+        firstName: String? = nil,
+        lastName: String? = nil,
+        categories: [String] = [],
+        completion: @escaping (Result<Joke, Error>) -> Void
+    ) {
+        provider.request(
+            .randomJoke(firstName, lastName, categories)
+        ) { response in
+            switch response {
+            case .success(let moyaResponse):
+                guard (200...399).contains(moyaResponse.statusCode) else {
+                    completion(.failure(APIError.unknownError))
                     return
                 }
-
-                if let data = data,
-                   let jokeResponse = try? JSONDecoder().decode(JokeResponse.self, from: data) {
-                    completion(.success(jokeResponse.value))
+                guard let joke = try? JSONDecoder().decode(JokeResponse.self, from: moyaResponse.data).value else {
+                    completion(.failure(APIError.decodingError))
                     return
                 }
-                completion(.failure(APIError.unknownError))
+                completion(.success(joke))
+            case .failure(let moyaError):
+                completion(.failure(moyaError))
             }
-
-        task.resume()
+        }
     }
 }
